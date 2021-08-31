@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { MeuTexto } from './components/MeuTexto'
+
+const pessoas = [
+  {
+    id: 1,
+    nome: 'Rodrigo',
+    idade: 32
+  },
+  {
+    id: 2,
+    nome: 'Dodó',
+    idade: 10
+  },
+  {
+    id: 3,
+    nome: 'Nina',
+    idade: 9
+  },
+  {
+    id: 4,
+    nome: "Lucia",
+    idade: 53
+  },
+  {
+    id: 5,
+    nome: "Claudio",
+    idade: 53
+  }
+]
 
 function App() {
+  function retornaPessoa(pessoa, index) {
+    return (
+      <MeuTexto key={pessoa.nome} nome={pessoa.nome} idade={pessoa.idade} />
+    )
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {pessoas.map(retornaPessoa)}
     </div>
   );
 }
