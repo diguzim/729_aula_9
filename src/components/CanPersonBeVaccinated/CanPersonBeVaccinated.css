@@ -1,0 +1,17 @@
+@media screen and (max-width: 600px) {
+  .myClass {
+    background-color: red;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .myClass {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .myClass {
+    background-color: green;
+  }
+}

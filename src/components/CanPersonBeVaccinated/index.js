@@ -1,0 +1,1 @@
+export { CanPersonBeVaccinated } from "./CanPersonBeVaccinated";

@@ -1,43 +1,25 @@
-import { MeuTexto } from './components/MeuTexto'
-
-const pessoas = [
-  {
-    id: 1,
-    nome: 'Rodrigo',
-    idade: 32
-  },
-  {
-    id: 2,
-    nome: 'Dodó',
-    idade: 10
-  },
-  {
-    id: 3,
-    nome: 'Nina',
-    idade: 9
-  },
-  {
-    id: 4,
-    nome: "Lucia",
-    idade: 53
-  },
-  {
-    id: 5,
-    nome: "Claudio",
-    idade: 53
-  }
-]
+import { useState } from "react";
+import { VaccinationController } from "./components";
 
 function App() {
-  function retornaPessoa(pessoa, index) {
+  const [personIds, setPersonIds] = useState(['a'])
+  
+  function returnVaccinationController() {
     return (
-      <MeuTexto key={pessoa.nome} nome={pessoa.nome} idade={pessoa.idade} />
+      <VaccinationController />
     )
   }
-  
+
+  function addPerson() {
+    const newPersonIds = [...personIds]
+    newPersonIds.push('a')
+    setPersonIds(newPersonIds)
+  }
+
   return (
     <div className="App">
-      {pessoas.map(retornaPessoa)}
+      {personIds.map(returnVaccinationController)}
+      <button onClick={addPerson}>Add another vaccination controller</button>
     </div>
   );
 }
